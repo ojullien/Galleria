@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>Galleria - Venezia - One</title>
+<base href="https://my.galleria.it/" />
+<meta name="description" content="Galleria - Venezia - One" />
+<meta name="keywords" content="Galleria,Venezia,One" />
+<meta name="robots" content="NOINDEX,NOFOLLOW" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Droid+Sans|Lobster' type='text/css' />
+<link rel="stylesheet" href="public/css/style.min.css" media="all" type="text/css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72-precomposed" />
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="public/css/ie.css" media="all" type="text/css" />
+<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+document.write('<style type="text/css">.noscript { display: none; }</style>');
+</script>
+</head>
+<body>
+<section id="wrapper">
+<header>
+<h1><a href="index.html">Gallerie<span class="hide"> - Venezia</span></a></h1>
+</header>
+<article>
+<header>
+<h2>Gallerie - Venezia - One</h2>
+</header>
+<section id="stretch-container-gallery">
+<div id="gallery" class="content">
+<div id="controls" class="controls"></div>
+<div class="slideshow-container">
+<div id="loading" class="loader"></div>
+<div id="slideshow" class="slideshow"></div>
+</div>
+<div id="caption" class="caption-container"></div>
+</div>
+</section>
+<section id="stretch-container-thumbs" class="hide">
+<div id="thumbs" class="navigation">
+<ul class="thumbs noscript">
+<li><a class="thumb" href="data/gallerie/galleria-01/slides/DSC06677.jpg" title="Photo #1"><img src="data/gallerie/galleria-01/thumbs/DSC06677.jpg" alt="Photo #1" width="75" height="75" /></a><div class="caption"><div class="download"><a href="hires.php?gal=16&amp;img=DSC06677.jpg">T&#233;l&#233;charger la photo originale</a></div><div class="image-title">Photo #1</div><div class="image-desc">&#160;</div></div></li>
+<li><a class="thumb" href="data/gallerie/galleria-01/slides/DSC06678.jpg" title="Photo #2"><img src="data/gallerie/galleria-01/thumbs/DSC06678.jpg" alt="Photo #2" width="75" height="75" /></a><div class="caption"><div class="download"><a href="hires.php?gal=16&amp;img=DSC06678.jpg">T&#233;l&#233;charger la photo originale</a></div><div class="image-title">Photo #2</div><div class="image-desc">&#160;</div></div></li>
+<li><a class="thumb" href="data/gallerie/galleria-01/slides/P1000503.jpg" title="Photo #531"><img src="data/gallerie/galleria-01/thumbs/P1000503.jpg" alt="Photo #531" width="75" height="75" /></a><div class="caption"><div class="download"><a href="hires.php?gal=16&amp;img=P1000503.jpg">T&#233;l&#233;charger la photo originale</a></div><div class="image-title">Photo #531</div><div class="image-desc">&#160;</div></div></li>
+</ul>
+</div>
+</section>
+</article>
+<div style="clear: both;"></div>
+</section>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="public/js/galleriffic.min.js"></script>
+<script type="text/javascript" src="public/js/opacityrollover.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+$('div.content').css('display', 'block');
+var onMouseOutOpacity = 0.67;
+$('#thumbs ul.thumbs li').opacityrollover({
+mouseOutOpacity:onMouseOutOpacity,
+mouseOverOpacity:1.0,
+fadeSpeed:'fast',
+exemptionSelector:'.selected'
+});
+var gallery = $('#thumbs').galleriffic({
+delay:2500,
+numThumbs:18,
+preloadAhead:36,
+enableTopPager:true,
+enableBottomPager:true,
+maxPagesToShow:5,
+imageContainerSel:'#slideshow',
+controlsContainerSel:'#controls',
+captionContainerSel:'#caption',
+loadingContainerSel:'#loading',
+renderSSControls:true,
+renderNavControls:true,
+playLinkText:'Lancer diaporama',
+pauseLinkText:'Arr&#234;ter diaporama',
+prevLinkText:'&lsaquo; Photo pr&#233;c&#233;dente',
+nextLinkText:'Photo suivante &rsaquo;',
+nextPageLinkText:'&gt;&gt;',
+prevPageLinkText:'&lt;&lt;',
+enableHistory:false,
+autoStart:false,
+syncTransitions:true,
+defaultTransitionDuration:900,
+onSlideChange:function(prevIndex, nextIndex) {
+this.find('ul.thumbs').children()
+.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+.eq(nextIndex).fadeTo('fast', 1.0);
+},
+onPageTransitionOut:function(callback){this.fadeTo('fast', 0.0, callback);},
+onPageTransitionIn:function(){this.fadeTo('fast', 1.0);}
+});
+});
+</script>
+</body>
+</html>

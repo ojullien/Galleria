@@ -1,0 +1,31 @@
+{
+    "name": "oseille/galleria",
+    "type": "library",
+    "description": "Personal static html photo gallery",
+    "keywords": ["html","php5","jquery"],
+    "homepage":"https://github.com/oseille/Db",
+    "readme":"README.md",
+    "time":"2012-09-11",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olivier Jullien",
+            "homepage": "https://github.com/ojullien"
+        }
+    ],
+    "require": {
+        "php": "^5.6",
+        "ext-gd": "*"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "squizlabs/php_codesniffer": "^3",
+        "phpunit/phpunit": "~4.6",
+        "phpmd/phpmd" : "@stable"
+    },
+    "scripts": {
+        "testmycode": ["vendor/bin/phpunit"],
+        "sniffemycode": ["vendor/bin/phpcs --standard=./phpcs.xml"],
+        "messmycode": ["vendor/bin/phpmd src text ./phpmd.xml"]
+    }
+}
