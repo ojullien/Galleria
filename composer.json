@@ -3,9 +3,9 @@
     "type": "library",
     "description": "Personal static html photo gallery",
     "keywords": ["html","php5","jquery"],
-    "homepage":"https://github.com/oseille/Db",
+    "homepage":"https://github.com/oseille/Galleria",
     "readme":"README.md",
-    "time":"2012-09-11",
+    "time":"2019-11-18",
     "license": "MIT",
     "authors": [
         {
